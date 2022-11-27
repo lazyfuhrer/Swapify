@@ -13,7 +13,6 @@ export default function Home() {
 
   return (
     <div>
-      <h1>ddd</h1>
       <Button onClick={getName} bgColor='teal.300'>Click Here</Button>
     </div>
   )
