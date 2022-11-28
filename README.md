@@ -1,1 +1,1 @@
-A simple dApp that swaps native tokens to ERC20 tokens.
+A simple dApp that converts native tokens to ERC20 tokens.
