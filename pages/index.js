@@ -6,11 +6,6 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
 
-  async function getName() {
-    const res = await axios.get('/api/hello')
-    console.log(res)
-  }
-
   return (
     <div>
       <Heading alignItems={'center'} justifyContent='center'>
