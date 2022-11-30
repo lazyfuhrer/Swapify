@@ -1,4 +1,4 @@
-import { Button, Heading } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading } from '@chakra-ui/react'
 import axios from 'axios'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -8,9 +8,11 @@ export default function Home() {
 
   return (
     <div>
-      <Heading alignItems={'center'} justifyContent='center'>
-        Welcome to Swapify - Converts Native tokens to ERC20
-      </Heading>
+      <Box align={'center'}>
+        <Heading py={'150'} px={'50'}>
+          Welcome to Swapify - Converts Native tokens to ERC20
+        </Heading>
+      </Box>
     </div>
   )
 }
