@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react'
+import { Button, Heading } from '@chakra-ui/react'
 import axios from 'axios'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -13,7 +13,9 @@ export default function Home() {
 
   return (
     <div>
-      <Button onClick={getName} bgColor='teal.300'>Click Here</Button>
+      <Heading alignItems={'center'} justifyContent='center'>
+        Welcome to Swapify - Converts Native tokens to ERC20
+      </Heading>
     </div>
   )
 }

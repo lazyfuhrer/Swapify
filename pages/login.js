@@ -39,8 +39,6 @@ function SignIn() {
             userData.chain = chain.id;
         }
 
-        // const userData = { address: account, chain: chain.id, network: 'evm' };
-
         const { data } = await axios.post('/api/auth/request-message', userData, {
             headers: {
                 'Content-Type': 'application/json',

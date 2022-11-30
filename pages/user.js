@@ -1,12 +1,13 @@
 import { getSession, signOut } from 'next-auth/react';
+import Moralis from 'moralis';
+import { Text } from '@chakra-ui/react';
 
 // gets a prop from getServerSideProps
-function User({ user }) {
+function User({ user, balance }) {
     return (
         <div>
-            <h4>User session:</h4>
-            <pre>{JSON.stringify(user, null, 2)}</pre>
-            <button onClick={() => signOut({ redirect: '/login' })}>Sign out</button>
+            <Text>User: {user.address}</Text>
+            <Text>Your MATIC balance: {((balance.balance)/1E18).toFixed(3)}</Text>
         </div>
     );
 }
@@ -24,8 +25,15 @@ export async function getServerSideProps(context) {
         };
     }
 
+    await Moralis.start({ apiKey: process.env.MORALIS_API_KEY });
+
+    const response = await Moralis.EvmApi.balance.getNativeBalance({
+        address: session.user.address,
+        chain: 0x89
+    })
+
     return {
-        props: { user: session.user },
+        props: { user: session.user, balance: response.raw },
     };
 }
 
